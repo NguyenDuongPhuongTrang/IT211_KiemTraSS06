@@ -38,7 +38,7 @@ public class StudentController {
     }
 
     @PostMapping
-    public ResponseEntity<ApiDataResponse<Student>> createStudent(Student student) {
+    public ResponseEntity<ApiDataResponse<Student>> createStudent(@RequestBody Student student) {
         return new ResponseEntity<>(new ApiDataResponse<>(
                 true,
                 "Tạo sinh viên thành công",
@@ -48,7 +48,7 @@ public class StudentController {
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<ApiDataResponse<Student>> updateStudent(@PathVariable Long id, Student student) {
+    public ResponseEntity<ApiDataResponse<Student>> updateStudent(@PathVariable Long id, @RequestBody Student student) {
         return new ResponseEntity<>(new ApiDataResponse<>(
                 true,
                 "Cập nhật sinh viên thành công",
